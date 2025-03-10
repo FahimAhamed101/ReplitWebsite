@@ -1,14 +1,18 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-
 import cors from "cors";
-const app = express()
+
+const app = express();
+
+// Enable CORS
 app.use(
   cors({
     origin: "http://localhost:5173",
     credentials: true,
   })
 );
+
+// Middleware to parse JSON and URL-encoded bodies
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -49,16 +53,19 @@ app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
   console.error(err); // Log the error for debugging
 });
 
+// Root route
 app.get("/", (req, res) => {
   res.send("Lebaba E-commerce Server is running....");
 });
 
 // Register routes and start the server
 async function main() {
-  const server = await registerRoutes(app);
+  // Register routes
+  await registerRoutes(app);
 
+  // Start the server
   const port = 5000;
-  server.listen(port, "0.0.0.0", () => {
+  app.listen(port, () => {
     console.log(`Serving on port ${port}`); // Properly log the server start message
   });
 }
