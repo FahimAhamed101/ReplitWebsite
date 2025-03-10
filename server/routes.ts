@@ -3,7 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { z } from "zod";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<Express> {
   // API routes with /api prefix
   const defaultProducts: any[] = [
     {
@@ -105,7 +105,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "Invalid product ID" });
       }
 
-      const product = await storage.getProductById(id);
+      const product = await  res.json(defaultProducts); 
       if (!product) {
         return res.status(404).json({ message: "Product not found" });
       }
