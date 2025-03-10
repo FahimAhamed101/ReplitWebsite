@@ -8,7 +8,7 @@ import {
   categories,
   type Category,
   type InsertCategory
-} from "@shared/schema";
+} from "./shared/schema";
 
 // Define the storage interface
 export interface IStorage {
