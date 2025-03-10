@@ -16,7 +16,7 @@ export default function Home() {
     isLoading: isProductsLoading, 
     error: productsError 
   } = useQuery({
-    queryKey: ["http://localhost:5000/api/products"],
+    queryKey: ["https://replit-website.vercel.app/api/products"],
     
   });
 
@@ -26,7 +26,7 @@ export default function Home() {
     isLoading: isCategoriesLoading, 
     error: categoriesError 
   } = useQuery({
-    queryKey: ["http://localhost:5000/api/categories"],
+    queryKey: ["https://replit-website.vercel.app/api/categories"],
   });
 
   // Fetch search results when searchQuery changes
@@ -35,7 +35,7 @@ export default function Home() {
     isLoading: isSearchResultsLoading,
     error: searchError
   } = useQuery({
-    queryKey: ["http://localhost:5000/api/search", searchQuery],
+    queryKey: ["https://replit-website.vercel.app/api/search", searchQuery],
     enabled: isSearching && searchQuery.length > 1,
   });
 
