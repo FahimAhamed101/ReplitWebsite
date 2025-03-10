@@ -7,7 +7,7 @@ const app = express();
 // Enable CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://replit-website-g6d6.vercel.app",
     credentials: true,
   })
 );
