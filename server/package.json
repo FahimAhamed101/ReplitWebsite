@@ -1,0 +1,17 @@
+{
+  "name": "rest-express",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx index.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "tsx": "^4.19.3",
+    "zod": "^3.24.2"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.8"
+  }
+}

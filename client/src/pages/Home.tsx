@@ -12,11 +12,12 @@ export default function Home() {
 
   // Fetch all products
   const { 
-    data: products, 
+    data: products,
     isLoading: isProductsLoading, 
     error: productsError 
   } = useQuery({
-    queryKey: ["/api/products"],
+    queryKey: ["http://localhost:5000/api/products"],
+    
   });
 
   // Fetch all categories
@@ -25,7 +26,7 @@ export default function Home() {
     isLoading: isCategoriesLoading, 
     error: categoriesError 
   } = useQuery({
-    queryKey: ["/api/categories"],
+    queryKey: ["http://localhost:5000/api/categories"],
   });
 
   // Fetch search results when searchQuery changes
@@ -34,7 +35,7 @@ export default function Home() {
     isLoading: isSearchResultsLoading,
     error: searchError
   } = useQuery({
-    queryKey: ["/api/search", searchQuery],
+    queryKey: ["http://localhost:5000/api/search", searchQuery],
     enabled: isSearching && searchQuery.length > 1,
   });
 

@@ -15,7 +15,7 @@ import {
 import { useCart } from "@/contexts/CartContext";
 
 export default function ProductDetail() {
-  const [_, params] = useRoute("/product/:id");
+  const [_, params] = useRoute("https://replit-website.vercel.app/product/:id");
   const productId = params?.id ? parseInt(params.id, 10) : null;
   const [quantity, setQuantity] = useState(1);
   const { addToCart } = useCart();
@@ -30,7 +30,7 @@ export default function ProductDetail() {
     isLoading, 
     error 
   } = useQuery({
-    queryKey: [`/api/products/${productId}`],
+    queryKey: [`https://replit-website.vercel.app/api/products/${productId}`],
     enabled: productId !== null,
   });
 
